@@ -16,7 +16,24 @@ module.exports = function(grunt) {
           "/_colour_palette.sass",
           "/_colour_theme.sass"
         ],
-        dest: "src/sass/rizzo"
+        dest: "src/sass/rizzo/variables"
+      },
+      rizzoExtends: {
+        options: {
+          baseUrl: "https://raw.githubusercontent.com/lonelyplanet/rizzo/master/app/assets/stylesheets/sass/extends"
+        },
+        src: [
+          "/helpers/_clearfix.sass",
+          "/helpers/_cross_browser.sass",
+          "/helpers/_image_replacement.sass",
+          "/helpers/_pseudo_elements.sass",
+          "/helpers/_states.sass",
+          "/helpers/_typographic_modifiers.sass",
+          "/lp_styles/_decoration.sass",
+          "/lp_styles/_transitions.sass",
+          "/lp_styles/_typography.sass"
+        ],
+        dest: "src/sass/rizzo/extends"
       }
     },
 
