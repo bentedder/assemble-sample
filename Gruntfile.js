@@ -9,6 +9,7 @@ module.exports = function(grunt) {
     wget: {
       rizzoVariables: {
         options: {
+          overwrite: true,
           baseUrl: "https://raw.githubusercontent.com/lonelyplanet/rizzo/master/app/assets/stylesheets/sass/variables"
         },
         src: [
@@ -20,6 +21,7 @@ module.exports = function(grunt) {
       },
       rizzoExtends: {
         options: {
+          overwrite: true,
           baseUrl: "https://raw.githubusercontent.com/lonelyplanet/rizzo/master/app/assets/stylesheets/sass/extends"
         },
         src: [
@@ -37,6 +39,7 @@ module.exports = function(grunt) {
       },
       rizzoMixins: {
         options: {
+          overwrite: true,
           baseUrl: "https://raw.githubusercontent.com/lonelyplanet/rizzo/master/app/assets/stylesheets/sass/mixins"
         },
         src: [
