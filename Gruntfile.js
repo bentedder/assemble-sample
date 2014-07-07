@@ -34,6 +34,22 @@ module.exports = function(grunt) {
           "/lp_styles/_typography.sass"
         ],
         dest: "src/sass/rizzo/extends"
+      },
+      rizzoMixins: {
+        options: {
+          baseUrl: "https://raw.githubusercontent.com/lonelyplanet/rizzo/master/app/assets/stylesheets/sass/mixins"
+        },
+        src: [
+          "/_css3.sass",
+          "/_css_arrow.sass",
+          "/_images.sass",
+          "/_responsive.sass",
+          "/_retina.sass",
+          "/_svg.sass",
+          "/_tags.sass",
+          "/_utilities.sass"
+        ],
+        dest: "src/sass/rizzo/mixins"
       }
     },
 
