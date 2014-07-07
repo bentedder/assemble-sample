@@ -6,6 +6,56 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
 
+    wget: {
+      rizzoVariables: {
+        options: {
+          overwrite: true,
+          baseUrl: "https://raw.githubusercontent.com/lonelyplanet/rizzo/master/app/assets/stylesheets/sass/variables"
+        },
+        src: [
+          "/_typography.sass",
+          "/_colour_palette.sass",
+          "/_colour_theme.sass"
+        ],
+        dest: "src/sass/rizzo/variables"
+      },
+      rizzoExtends: {
+        options: {
+          overwrite: true,
+          baseUrl: "https://raw.githubusercontent.com/lonelyplanet/rizzo/master/app/assets/stylesheets/sass/extends"
+        },
+        src: [
+          "/helpers/_clearfix.sass",
+          "/helpers/_cross_browser.sass",
+          "/helpers/_image_replacement.sass",
+          "/helpers/_pseudo_elements.sass",
+          "/helpers/_states.sass",
+          "/helpers/_typographic_modifiers.sass",
+          "/lp_styles/_decoration.sass",
+          "/lp_styles/_transitions.sass",
+          "/lp_styles/_typography.sass"
+        ],
+        dest: "src/sass/rizzo/extends"
+      },
+      rizzoMixins: {
+        options: {
+          overwrite: true,
+          baseUrl: "https://raw.githubusercontent.com/lonelyplanet/rizzo/master/app/assets/stylesheets/sass/mixins"
+        },
+        src: [
+          "/_css3.sass",
+          "/_css_arrow.sass",
+          "/_images.sass",
+          "/_responsive.sass",
+          "/_retina.sass",
+          "/_svg.sass",
+          "/_tags.sass",
+          "/_utilities.sass"
+        ],
+        dest: "src/sass/rizzo/mixins"
+      }
+    },
+
     connect: {
       server: {
         options: {
@@ -103,6 +153,7 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
 
   grunt.loadNpmTasks("assemble");
+  grunt.loadNpmTasks("grunt-wget");
   grunt.loadNpmTasks("grunt-contrib-sass");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-contrib-clean");
@@ -115,5 +166,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask("default", [ "connect", "watch" ]);
+  grunt.registerTask("rizzo", [ "wget:rizzoMixins", "wget:rizzoExtends", "wget:rizzoVariables" ]);
 
 };

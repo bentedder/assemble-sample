@@ -13,6 +13,7 @@
     "grunt-browserify": "~2.1.2",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-jscs-checker": "~0.6.1",
+    "grunt-wget": "~0.1.2",
     "grunt-contrib-clean": "~0.5.0"
   }
 }
