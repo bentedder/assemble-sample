@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         options: {
           layout: "src/layouts/default.hbs",
           data: "src/data/*.json",
-          partials: "src/includes/*.hbs"
+          partials: "src/partials/*.hbs"
         }
       }
     },
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
           style: "expanded"
         },
         files: {
-          "src/generated-css/main.css": "src/sass/app.sass"
+          "tmp/generated-css/main.css": "src/sass/app.sass"
         }
       }
     },
@@ -97,7 +97,7 @@ module.exports = function(grunt) {
           banner: "/* Minified CSS */"
         },
         files: {
-          "dist/css/main.css": "src/generated-css/main.css"
+          "dist/css/main.css": "tmp/generated-css/main.css"
         }
       }
     },
@@ -111,7 +111,7 @@ module.exports = function(grunt) {
         tasks: [ "clean:css","sass", "cssmin" ]
       },
       assemble: {
-        files: [ "src/data/*", "src/includes/*", "src/layouts/*", "src/pages/*" ],
+        files: [ "src/data/*", "src/partials/*", "src/layouts/*", "src/pages/*" ],
         tasks: [ "clean:files","assemble" ]
       },
       js: {
@@ -145,7 +145,8 @@ module.exports = function(grunt) {
     clean: {
       js: "dist/js",
       css: "dist/css",
-      files: "dist/*.html"
+      files: "dist/*.html",
+      tmp: "tmp/*"
     }
 
   });
