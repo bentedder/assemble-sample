@@ -163,5 +163,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask("default", [ "connect", "watch" ]);
+  grunt.registerTask("rizzo", [ "wget:rizzoMixins", "wget:rizzoExtends", "wget:rizzoVariables" ]);
 
 };
