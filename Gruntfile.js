@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         options: {
           layout: "src/layouts/default.hbs",
           data: "src/data/*.json",
-          partials: "src/includes/*.hbs"
+          partials: "src/partials/*.hbs"
         }
       }
     },
@@ -111,7 +111,7 @@ module.exports = function(grunt) {
         tasks: [ "clean:css","sass", "cssmin" ]
       },
       assemble: {
-        files: [ "src/data/*", "src/includes/*", "src/layouts/*", "src/pages/*" ],
+        files: [ "src/data/*", "src/partials/*", "src/layouts/*", "src/pages/*" ],
         tasks: [ "clean:files","assemble" ]
       },
       js: {
