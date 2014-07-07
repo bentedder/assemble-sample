@@ -6,6 +6,20 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
 
+    wget: {
+      rizzoVariables: {
+        options: {
+          baseUrl: "https://raw.githubusercontent.com/lonelyplanet/rizzo/master/app/assets/stylesheets/sass/variables"
+        },
+        src: [
+          "/_typography.sass",
+          "/_colour_palette.sass",
+          "/_colour_theme.sass"
+        ],
+        dest: "src/sass/rizzo"
+      }
+    },
+
     connect: {
       server: {
         options: {
@@ -103,6 +117,7 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
 
   grunt.loadNpmTasks("assemble");
+  grunt.loadNpmTasks("grunt-wget");
   grunt.loadNpmTasks("grunt-contrib-sass");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-contrib-clean");
